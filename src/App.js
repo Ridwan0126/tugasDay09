@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { Header, Nav, Body, Footer } from "./template";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentPage: "home",
+    };
+  }
+
+  changePage = (page) => {
+    this.setState({
+      currentPage: page,
+    });
+  };
+
+  loginUserHandler = (user) => {
+    this.setState({
+      loginUser: user,
+    });
+  };
+
+  render() {
+    return (
+      <>
+        <Header />
+        <hr />
+        <Nav page={this.state.currentPage} goToPage={this.changePage} />
+        <Body page={this.state.currentPage} goToPage={this.changePage} />
+        <br />
+        <br />
+        <br />
+        <br />
+        <Footer />
+      </>
+    );
+  }
 }
 
 export default App;

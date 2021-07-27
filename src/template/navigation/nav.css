@@ -1,0 +1,19 @@
+.nav {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.nav > .menu {
+  padding: 5px 15px;
+  border: 1px solid grey;
+  border-radius: 4px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.nav > .menu:last-child {
+  margin-right: 0;
+}

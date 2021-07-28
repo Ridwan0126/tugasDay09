@@ -23,10 +23,10 @@ class Register extends Component {
   registerHandler = (e) => {
     e.preventDefault();
     const user = {
-      name: e.target[0].value,
-      username: e.target[1].value,
-      password: e.target[2].value,
-      address: e.target[3].value,
+      name: e.target[1].value,
+      username: e.target[2].value,
+      password: e.target[3].value,
+      address: e.target[4].value,
     };
     console.log(user);
     if (this.props.statusEdit) {
@@ -71,15 +71,23 @@ class Register extends Component {
               <input type="text" name="username" placeholder="Username" />
             </div>
             <div className="input-group">
-              <input type="password" placeholder="Password" />
+              <input type="text" name="password" placeholder="Password" />
             </div>
             <div className="input-group">
               <input type="text" name="address" placeholder="Address" />
             </div>
             {statusEdit ? (
-              <button className="btn1" type="submit">
-                SAVE
-              </button>
+              <>
+                <button className="btn5" type="submit">
+                  SAVE
+                </button>
+                <button className="btn5" type="submit">
+                  SIGN UP
+                </button>
+                <button className="btn5" onClick={this.moveToLogin}>
+                  LOGIN
+                </button>
+              </>
             ) : (
               <>
                 <button className="btn1" type="submit">
@@ -92,6 +100,8 @@ class Register extends Component {
             )}
           </form>
         </div>
+
+        {/* {this.props.login} */}
       </>
     );
   }

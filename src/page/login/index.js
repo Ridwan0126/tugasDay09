@@ -21,8 +21,6 @@ class Login extends Component {
 
       if (!usernameValue) {
         return alert("username salah");
-      } else if (!usernameValue) {
-        return alert("username masih salah");
       } else if (!e.target.password.value) {
         return alert("Password salah");
       } else if (
